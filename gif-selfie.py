@@ -1,7 +1,7 @@
-import selenium
+import selenium, os
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-
+from selenium.webdriver.support.ui import WebDriverWait
 
 def select(arg1, arg2):
 	select_element = Select(driver.find_element_by_id(arg1))
@@ -43,3 +43,9 @@ for i in range(1, 5):
 
 select('pixelPlaneSelect', pixelPlane)
 
+curDir = os.getcwd()
+driver.find_element_by_id('fileName').send_keys(curDir + '/frame-video8-1.raw')
+
+
+
+# driver.quit()
